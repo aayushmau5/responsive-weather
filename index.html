@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="icons/logo.png" alt="Logo" />
+      <p>Get Weather Information of your City</p>
+    </header>
+    <main>
+      <form>
+        <div class="search-fields">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Enter City name"
+          />
+          <button type="submit" class="search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+      <div class="warning">
+        <p>Enter a Valid Cityname</p>
+      </div>
+      <span class="loading__anim"></span>
+      <div class="container">
+        <div class="bar temp-bar">
+          <img src="./icons/011-cloud.png" alt="Feel" />
+          <div class="data">
+            <p><span class="location"></span></p>
+            <p><span class="temp"> </span>°C</p>
+            <p><span class="feel"></span></p>
+          </div>
+        </div>
+        <div class="bar max-bar">
+          <img src="./icons/sun.png" alt="Feel" />
+          <div class="datas">
+            <p>Max: <span class="max-temp"></span>°C</p>
+          </div>
+        </div>
+        <div class="bar min-bar">
+          <img src="./icons/climate.png" alt="Feel" />
+          <div class="datas">
+            <p>Min: <span class="min-temp"></span>°C</p>
+          </div>
+        </div>
+
+        <div class="bar humidity-bar">
+          <img src="./icons/water.png" alt="Feel" />
+          <div class="datas">
+            <p>Humidity: <span class="humidity"></span> %</p>
+          </div>
+        </div>
+        <div class="bar wind-bar">
+          <img src="./icons/017-wind.png" alt="Feel" />
+          <div class="datas">
+            <p>Wind Speed: <span class="wind-speed"></span>m/s</p>
+          </div>
+        </div>
+        <div class="bar pressure-bar">
+          <img src="./icons/indicator.png" alt="Feel" />
+          <div class="datas">
+            <p>Pressure: <span class="pressure"></span> Pa</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Made by <a href="https://www.github.com/aayushmau5">ayushmau5</a></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
