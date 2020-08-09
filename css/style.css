@@ -7,7 +7,10 @@
 }
 
 body {
-  background: #f2f2f2;
+  background: url(../svg/image.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,7 +23,8 @@ body {
 }
 
 header {
-  background: #007bff;
+  background: -webkit-gradient(linear, left top, right top, from(#0099ff), to(#00a3ff));
+  background: linear-gradient(90deg, #0099ff 0%, #00a3ff 100%);
   color: white;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -65,14 +69,14 @@ main {
 
 main .warning {
   margin-top: 20px;
-  background-color: #e58f8f;
+  background-color: #ec8585;
   color: white;
   max-width: 500px;
   text-align: center;
   padding: 20px;
   font-size: 24px;
   font-weight: 800;
-  border: 3px solid #b15b5b;
+  border: 3px solid #f5cccc;
   border-radius: 5px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -191,7 +195,7 @@ footer {
   width: 100%;
   padding: 20px;
   text-align: center;
-  background: #444444;
+  background: transparent;
   color: white;
 }
 
