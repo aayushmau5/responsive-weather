@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+:root {
+  --header-bg: linear-gradient(
+    90deg,
+    rgba(0, 153, 255, 1) 0%,
+    rgba(0, 163, 255, 1) 100%
+  );
+  --icon-color: black;
+  --loading-color: #039be5;
+  --bg-color: white;
+  --font-color: black;
+}
+
+[data-theme="dark"] {
+  --font-color: #fff;
+  --bg-color: #5a5a5f;
+  --header-bg: linear-gradient(
+    90deg,
+    rgba(66, 0, 255, 1) 0%,
+    rgba(189, 0, 255, 1) 100%
+  );
+  --icon-color: white;
+  --loading-color: blueviolet;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -23,8 +47,7 @@ body {
 }
 
 header {
-  background: -webkit-gradient(linear, left top, right top, from(#0099ff), to(#00a3ff));
-  background: linear-gradient(90deg, #0099ff 0%, #00a3ff 100%);
+  background: var(--header-bg);
   color: white;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -90,8 +113,8 @@ main .loading__anim {
   height: 35px;
   width: 35px;
   border: 5px solid rgba(189, 189, 189, 0.25);
-  border-left-color: #039be5;
-  border-top-color: #039be5;
+  border-left-color: var(--loading-color);
+  border-top-color: var(--loading-color);
   border-radius: 50%;
   -webkit-animation: rotate 600ms infinite linear;
           animation: rotate 600ms infinite linear;
@@ -159,7 +182,7 @@ main .loading__anim {
   margin: 50px;
   min-width: 250px;
   width: 350px;
-  background: white;
+  background: var(--bg-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,6 +197,7 @@ main .loading__anim {
           transform: translateY(50px);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  color: var(--font-color);
 }
 
 .bar img {
@@ -245,4 +269,69 @@ footer a {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.dark-theme {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dark-theme p {
+  margin: 0 10px;
+}
+
+.dark-theme p i {
+  color: var(--icon-color);
+}
+
+.toggler {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  position: relative;
+}
+
+.toggler input {
+  display: none;
+}
+
+.toggler input:checked + .slider::before {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.toggler input:checked + .slider {
+  background-color: blueviolet;
+}
+
+.slider {
+  bottom: 0;
+  background-color: #0099ff;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 1.4px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  height: 27px;
+  width: 27px;
+  transition: all 0.3s;
 }

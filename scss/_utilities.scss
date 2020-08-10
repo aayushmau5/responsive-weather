@@ -1,0 +1,23 @@
+:root {
+  --header-bg: linear-gradient(
+    90deg,
+    rgba(0, 153, 255, 1) 0%,
+    rgba(0, 163, 255, 1) 100%
+  );
+  --icon-color: black;
+  --loading-color: #039be5;
+  --bg-color: white;
+  --font-color: black;
+}
+
+[data-theme="dark"] {
+  --font-color: #fff;
+  --bg-color: #5a5a5f;
+  --header-bg: linear-gradient(
+    90deg,
+    rgba(66, 0, 255, 1) 0%,
+    rgba(189, 0, 255, 1) 100%
+  );
+  --icon-color: white;
+  --loading-color: blueviolet;
+}

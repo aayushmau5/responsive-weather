@@ -12,6 +12,7 @@ const humidity = document.querySelector(".humidity");
 const wind_speed = document.querySelector(".wind-speed");
 const pressure = document.querySelector(".pressure");
 const container = document.querySelector(".container");
+const toggler = document.querySelector(".toggler input[type='checkbox']");
 
 function getInput(e) {
   e.preventDefault();
@@ -53,6 +54,24 @@ function getData(query) {
     .catch((err) => console.log(err));
 }
 
+function changeTheme(e) {
+  if (e.target.checked) {
+    console.log("Checked");
+    document.documentElement.setAttribute("data-theme", "dark");
+    document.body.style.background = "url(svg/dark.svg)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+  } else {
+    console.log("Unchecked");
+    document.documentElement.setAttribute("data-theme", "light");
+    document.body.style.backgroundImage = "url(svg/image.svg)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+  }
+}
+
 searchBtn.addEventListener("click", getInput);
 searchInput.addEventListener("keyup", () => {
   bar.forEach((card) => {
@@ -60,3 +79,4 @@ searchInput.addEventListener("keyup", () => {
     card.style.transform = "translateY(50px)";
   });
 });
+toggler.addEventListener("change", changeTheme);

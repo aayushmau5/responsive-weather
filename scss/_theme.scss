@@ -1,0 +1,57 @@
+.dark-theme {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0 10px;
+
+    i {
+      color: var(--icon-color);
+    }
+  }
+}
+
+.toggler {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  position: relative;
+
+  input {
+    display: none;
+
+    &:checked + .slider::before {
+      transform: translateX(30px);
+    }
+
+    &:checked + .slider {
+      background-color: blueviolet;
+    }
+  }
+}
+
+.slider {
+  bottom: 0;
+  background-color: rgba(0, 153, 255, 1);
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 20px;
+  transition: 0.4s;
+
+  &::before {
+    content: "";
+    transition: all 0.3s;
+    position: absolute;
+    top: 1.4px;
+    left: 2px;
+    background-color: white;
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+    transition: all 0.3s;
+  }
+}
